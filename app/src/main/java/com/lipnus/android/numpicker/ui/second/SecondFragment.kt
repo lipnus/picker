@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.lipnus.android.numpicker.R
-import com.lipnus.android.skct.ui.first.BaseFragment
+import com.lipnus.android.numpicker.base.BaseFragment
 
 
 // TODO: Rename parameter arguments, choose names that match

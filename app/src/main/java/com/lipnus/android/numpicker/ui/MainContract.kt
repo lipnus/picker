@@ -1,18 +1,18 @@
 package com.lipnus.android.numpicker.ui
 
 
-import com.lipnus.android.skct.base.BasePresenter
-import com.lipnus.android.skct.base.BaseView
+import com.lipnus.android.numpicker.base.BasePresenter
+import com.lipnus.android.numpicker.base.BaseView
 
 
 interface MainContract{
 
-    interface View: BaseView<Presenter>{
+    interface View: BaseView<Presenter> {
 
     }
 
 
-    interface Presenter: BasePresenter{
+    interface Presenter: BasePresenter {
 
     }
 

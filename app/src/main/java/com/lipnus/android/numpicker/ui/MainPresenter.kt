@@ -1,7 +1,6 @@
 package com.lipnus.android.numpicker.ui
 
 
-import com.lipnus.android.numpicker.ui.MainContract
 
 class MainPresenter: MainContract.Presenter {
 

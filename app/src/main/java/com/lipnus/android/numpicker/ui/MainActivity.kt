@@ -4,10 +4,9 @@ import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.util.Log
 import com.lipnus.android.numpicker.R
-import com.lipnus.android.skct.base.BaseActivity
-import com.lipnus.android.skct.ui.MainPresenter
-import com.lipnus.android.skct.ui.first.FirstFragment
-import com.lipnus.android.skct.ui.second.SecondFragment
+import com.lipnus.android.numpicker.base.BaseActivity
+import com.lipnus.android.numpicker.ui.first.FirstFragment
+import com.lipnus.android.numpicker.ui.second.SecondFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 
