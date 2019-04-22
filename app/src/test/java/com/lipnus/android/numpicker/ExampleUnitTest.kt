@@ -1,4 +1,4 @@
-package com.empo.android.numpicker
+package com.lipnus.android.numpicker
 
 import org.junit.Test
 
