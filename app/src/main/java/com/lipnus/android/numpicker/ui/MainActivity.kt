@@ -6,53 +6,86 @@ import android.util.Log
 import com.lipnus.android.numpicker.R
 import com.lipnus.android.numpicker.base.BaseActivity
 import com.lipnus.android.numpicker.ui.first.FirstFragment
-import com.lipnus.android.numpicker.ui.second.SecondFragment
+import com.lipnus.android.numpicker.ui.first.SecondFragment
+import com.lipnus.android.numpicker.ui.first.ThirdFragment
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.support.v4.onPageChangeListener
+import org.jetbrains.anko.toast
 
 
-class MainActivity : BaseActivity() {
+class MainActivity :
+    BaseActivity(),
+    MainContract.View,
+    FirstFragment.OnFragmentInteractionListener{
 
 
-    private val firstFragment: FirstFragment by lazy { FirstFragment() }
-    private val secondFragment: SecondFragment by lazy { SecondFragment() }
-
-
-    private lateinit var mainPresenter: MainPresenter
-
+    override lateinit var presenter: MainContract.Presenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-
-        initLayout()
-
-        test(3)
+        presenter = MainPresenter(this)
+        presenter.start()
     }
 
-    fun initLayout(){
+
+    override fun initLayout(){
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
     }
 
-    fun<T> test (value : T?): Int{
-        Log.d("SSS", "입력값: $value")
-        return 0
+    override fun initViewPager() {
+
+        val mainAdapter = MainPagerAdapter(supportFragmentManager)
+
+        var firstFragment: FirstFragment = FirstFragment.newInstance("파라미터: 첫번재")
+        var secondFragment: SecondFragment = SecondFragment.newInstance("파라미터: 두번째")
+        var thirdFragment: ThirdFragment = ThirdFragment.newInstance("파라미터: 세번째")
+
+
+        mainAdapter.run {
+            addFragement(firstFragment,"첫번째")
+            addFragement(secondFragment,"두번째")
+            addFragement(thirdFragment,"세번째")
+        }
+        viewpager.adapter = mainAdapter
+
+        viewpager.onPageChangeListener {
+            onPageSelected {
+                navigation.menu.getItem(it).setChecked(true)
+            }
+        }
     }
 
+
+    override fun setPageIndex(index: Int) {
+        viewpager?.currentItem = index
+    }
 
 
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_first -> {
+                setPageIndex(0)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_second -> {
+                setPageIndex(1)
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.navigation_third -> {
+                setPageIndex(2)
                 return@OnNavigationItemSelectedListener true
             }
         }
         false
     }
+
+
+    override fun onFragmentInteraction(msg: String) {
+        toast(msg)
+    }
+
 }

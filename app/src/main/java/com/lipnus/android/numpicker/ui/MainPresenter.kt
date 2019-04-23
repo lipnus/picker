@@ -1,20 +1,12 @@
 package com.lipnus.android.numpicker.ui
 
 
-
-class MainPresenter: MainContract.Presenter {
-
-    private var view: MainContract.View
-
-
-    constructor(view: MainContract.View){
-        this.view = view
-    }
+class MainPresenter(private val mainView: MainContract.View): MainContract.Presenter{
 
 
     override fun start() {
 
+        mainView.initLayout()
+        mainView.initViewPager()
     }
-
-
 }

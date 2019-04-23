@@ -9,6 +9,9 @@ interface MainContract{
 
     interface View: BaseView<Presenter> {
 
+        fun initViewPager()
+
+        fun setPageIndex(index: Int)
     }
 
 
