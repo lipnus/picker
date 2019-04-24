@@ -46,14 +46,13 @@ class FirstFragment : BaseFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-        // Inflate the layout for this fragment
         var view: View = inflater.inflate(R.layout.fragment_first, container, false)
         val message = arguments?.getString(EXTRA_MESSAGE)
 
-        var textView: TextView = view.findViewById(R.id.textView)
-
-
-        textView.text = message
+//        var textView: TextView = view.findViewById(R.id.textView)
+//
+//
+//        textView.text = message
 
         return view
     }

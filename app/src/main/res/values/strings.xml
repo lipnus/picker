@@ -1,9 +1,24 @@
 <resources>
     <string name="app_name">NP</string>
 
-    <string name="title_first">First</string>
-    <string name="title_second">Second</string>
+    <string name="title_first">작문</string>
+    <string name="title_second">갑시다</string>
     <string name="title_third">Third</string>
+
+    <string name="setting_title">문장입력</string>
+    <string name="setting_subtitle">입력하신 내용은 자동으로 저장됩니다 :)</string>
+
+    <string name="setting_input">입력할 때</string>
+    <string name="setting_deny">거부당했을 때</string>
+    <string name="setting_success">받았을 때</string>
+
+    <string name="setting_input_explain">전화번호 받을 때 표시되는 문장</string>
+    <string name="setting_deny_explain">거절버튼을 눌렀을 때 표시되는 문장</string>
+    <string name="setting_success_explain">전화번호 받은 후 표시되는 문장</string>
+
+    <string name="setting_input_content">안녕하세요! 번호를 입력해주세요.</string>
+    <string name="setting_deny_content">거절은 거절합니다ㅜㅜ</string>
+    <string name="setting_success_content">감사합니다</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

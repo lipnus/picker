@@ -43,7 +43,6 @@ class MainActivity :
         var secondFragment: SecondFragment = SecondFragment.newInstance("파라미터: 두번째")
         var thirdFragment: ThirdFragment = ThirdFragment.newInstance("파라미터: 세번째")
 
-
         mainAdapter.run {
             addFragement(firstFragment,"첫번째")
             addFragement(secondFragment,"두번째")
@@ -51,18 +50,19 @@ class MainActivity :
         }
         viewpager.adapter = mainAdapter
 
+
         viewpager.onPageChangeListener {
             onPageSelected {
-                navigation.menu.getItem(it).setChecked(true)
+                navigation.menu.getItem(it).setChecked(true)//네비게이션바에 반영
             }
         }
+
     }
 
 
     override fun setPageIndex(index: Int) {
         viewpager?.currentItem = index
     }
-
 
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
