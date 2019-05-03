@@ -2,7 +2,6 @@ package com.lipnus.android.numpicker.ui
 
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
-import android.util.Log
 import com.lipnus.android.numpicker.R
 import com.lipnus.android.numpicker.base.BaseActivity
 import com.lipnus.android.numpicker.ui.first.FirstFragment
@@ -27,6 +26,7 @@ class MainActivity :
 
         presenter = MainPresenter(this)
         presenter.start()
+
     }
 
 
@@ -43,6 +43,7 @@ class MainActivity :
         var secondFragment: SecondFragment = SecondFragment.newInstance("파라미터: 두번째")
         var thirdFragment: ThirdFragment = ThirdFragment.newInstance("파라미터: 세번째")
 
+
         mainAdapter.run {
             addFragement(firstFragment,"첫번째")
             addFragement(secondFragment,"두번째")
@@ -56,7 +57,6 @@ class MainActivity :
                 navigation.menu.getItem(it).setChecked(true)//네비게이션바에 반영
             }
         }
-
     }
 
 
@@ -87,5 +87,8 @@ class MainActivity :
     override fun onFragmentInteraction(msg: String) {
         toast(msg)
     }
+
+
+
 
 }

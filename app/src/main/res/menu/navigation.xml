@@ -9,7 +9,7 @@
 
     <item
             android:id="@+id/navigation_second"
-            android:icon="@drawable/ic_gogo"
+            android:icon="@drawable/ic_winner"
             android:title="@string/title_second"/>
 
     <item
