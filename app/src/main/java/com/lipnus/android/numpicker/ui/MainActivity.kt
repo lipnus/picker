@@ -2,14 +2,13 @@ package com.lipnus.android.numpicker.ui
 
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
+import android.support.v4.view.ViewPager
 import com.lipnus.android.numpicker.R
 import com.lipnus.android.numpicker.base.BaseActivity
 import com.lipnus.android.numpicker.ui.first.FirstFragment
 import com.lipnus.android.numpicker.ui.first.SecondFragment
 import com.lipnus.android.numpicker.ui.first.ThirdFragment
 import kotlinx.android.synthetic.main.activity_main.*
-import org.jetbrains.anko.support.v4.onPageChangeListener
-import org.jetbrains.anko.toast
 
 
 class MainActivity :
@@ -20,9 +19,11 @@ class MainActivity :
 
     override lateinit var presenter: MainContract.Presenter
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
 
         presenter = MainPresenter(this)
         presenter.start()
@@ -51,12 +52,20 @@ class MainActivity :
         }
         viewpager.adapter = mainAdapter
 
+        viewpager?.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
 
-        viewpager.onPageChangeListener {
-            onPageSelected {
-                navigation.menu.getItem(it).setChecked(true)//네비게이션바에 반영
+            override fun onPageScrollStateChanged(state: Int) {
             }
-        }
+
+            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+
+            }
+            override fun onPageSelected(position: Int) {
+                navigation.menu.getItem(position).setChecked(true)
+            }
+
+        })
+
     }
 
 
@@ -85,8 +94,11 @@ class MainActivity :
 
 
     override fun onFragmentInteraction(msg: String) {
-        toast(msg)
+
     }
+
+
+
 
 
 

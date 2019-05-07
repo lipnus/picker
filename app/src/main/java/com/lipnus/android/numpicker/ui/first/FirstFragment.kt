@@ -4,14 +4,13 @@ package com.lipnus.android.numpicker.ui.first
 import android.content.Context
 import android.os.Bundle
 import android.provider.AlarmClock.EXTRA_MESSAGE
-import android.text.Editable
-import android.text.TextWatcher
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.lipnus.android.numpicker.R
 import com.lipnus.android.numpicker.base.BaseFragment
-import com.rengwuxian.materialedittext.MaterialEditText
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -21,9 +20,6 @@ private const val ARG_PARAM1 = "param1"
 
 class FirstFragment : BaseFragment() {
 
-    private lateinit var inputEt1: MaterialEditText
-    private lateinit var inputEt2: MaterialEditText
-    private lateinit var inputEt3: MaterialEditText
 
 
     companion object {
@@ -40,6 +36,9 @@ class FirstFragment : BaseFragment() {
 
     private var param1: String? = null
     private var listener: OnFragmentInteractionListener? = null
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var recyclerViewAdaptor: FirstRecyclerViewAdaptor
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,21 +54,44 @@ class FirstFragment : BaseFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         var view: View = inflater.inflate(R.layout.fragment_first, container, false)
+        recyclerView = view.findViewById(R.id.first_recyclerview)
+
         val message = arguments?.getString(EXTRA_MESSAGE)
+        initRecyclerView()
 
 
-        //인풋 Edittext
-        inputEt1 = view.findViewById(R.id.inputEt1)
-        inputEt2 = view.findViewById(R.id.inputEt2)
-        inputEt3 = view.findViewById(R.id.inputEt3)
 
-        initEditTextListener()
 
 
 //        textView.text = message
 
         return view
     }
+
+
+    private fun initRecyclerView(){
+
+        recyclerViewAdaptor = FirstRecyclerViewAdaptor()
+
+        recyclerView.run{
+            adapter = recyclerViewAdaptor
+            layoutManager = LinearLayoutManager(context)
+        }
+
+        recyclerViewAdaptor.addItem(FirstItem("title1", "text1"))
+        recyclerViewAdaptor.addItem(FirstItem("title2", "text2"))
+        recyclerViewAdaptor.addItem(FirstItem("title3", "text3"))
+        recyclerViewAdaptor.notifyDataSetChanged()
+
+
+
+
+    }
+
+
+
+
+
 
 
 
@@ -94,34 +116,6 @@ class FirstFragment : BaseFragment() {
     }
 
 
-
-    private fun initEditTextListener(){
-
-        val et: Array<MaterialEditText> = arrayOf(
-            inputEt1, inputEt2, inputEt3
-        )
-
-        for(i in 0..(et.size-1) ){
-            et[i].addTextChangedListener(object: TextWatcher {
-
-                override fun afterTextChanged(p0: Editable?) {
-                }
-
-                override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                }
-
-                override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
-//                    //변경내용을 db에 저장
-//                    context?.database?.use{
-//                        update("pickMessage", "content" to et[i].text )
-//                            .whereSimple("id=?", i.toString())
-//                            .exec()
-//                    }
-                }
-            })
-        }
-    }
 
 
 }

@@ -7,4 +7,7 @@ interface BaseView<T>{
 
     fun initLayout()
 
+    fun getStringPref(key: String):String
+    fun saveStringPref(key:String, value:String)
+
 }

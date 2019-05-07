@@ -1,13 +1,16 @@
 package com.lipnus.android.numpicker.ui.first
 
+import android.content.Intent
 import android.os.Bundle
 import android.provider.AlarmClock.EXTRA_MESSAGE
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import com.lipnus.android.numpicker.R
 import com.lipnus.android.numpicker.base.BaseFragment
+import com.lipnus.android.numpicker.ui.number.NumberActivity
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -29,7 +32,16 @@ class SecondFragment : BaseFragment() {
     }
 
 
+
+
     private var param1: String? = null
+    private lateinit var button: Button
+
+
+    interface OnFrgmentInteraction {
+        // TODO: Update argument type and name
+        fun onIntent(msg: String)
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,8 +60,16 @@ class SecondFragment : BaseFragment() {
         var view: View = inflater.inflate(R.layout.fragment_second, container, false)
         val message = arguments?.getString(EXTRA_MESSAGE)
 
-        var textView: TextView = view.findViewById(R.id.textView)
-        textView.text = message
+        var textView: TextView = view.findViewById(R.id.second_title_tv)
+
+        button = view.findViewById(R.id.second_btn)
+
+        button.setOnClickListener {
+            activity?.let{
+                val iT = Intent(context, NumberActivity::class.java)
+                startActivity(iT)
+            }
+        }
 
         return view
     }

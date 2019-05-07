@@ -12,10 +12,14 @@ interface MainContract{
         fun initViewPager()
 
         fun setPageIndex(index: Int)
+
     }
 
 
     interface Presenter: BasePresenter {
+
+        fun initDatabase()
+        fun isDatabaseInited():Boolean
 
     }
 
