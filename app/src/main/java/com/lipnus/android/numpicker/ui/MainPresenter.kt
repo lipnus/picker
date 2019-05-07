@@ -21,12 +21,7 @@ class MainPresenter(private val mainView: MainContract.View): MainContract.Prese
 
         if( ! isDatabaseInited()){
 
-            R.string.setting_input_content.toString()
 
-            Log.d("SSS", R.string.setting_input_content.toString())
-//            mainView.saveStringPref("1",  )
-//            mainView.saveStringPref("2", "inited")
-//            mainView.saveStringPref("3", "inited")
         }
     }
 

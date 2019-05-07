@@ -5,8 +5,8 @@
     <string name="title_second">갑시다</string>
     <string name="title_third">Third</string>
 
-    <string name="setting_title">문장입력</string>
-    <string name="setting_subtitle">입력하신 내용은 자동으로 저장됩니다 :)</string>
+    <string name="setting_title">문장 설정하기</string>
+    <string name="setting_subtitle">실시간으로 저장됩니다!</string>
 
     <string name="setting_title_input">처음에 보이는 문장</string>
     <string name="setting_title_getting">번호를 입력할 때</string>
@@ -16,9 +16,9 @@
     <string name="setting_success_explain">번호를 치는동안 나오는 문장</string>
     <string name="setting_deny_explain">거절버튼을 눌렀을 때 표시되는 문장</string>
 
-    <string name="setting_input_content">안녕하세요! 번호를 입력해주세요.</string>
+    <string name="setting_input_content">안녕하세요! 번호 알려주세요.</string>
     <string name="setting_deny_content">거절은 거절합니다ㅜㅜ</string>
-    <string name="setting_success_content">감사합니다</string>
+    <string name="setting_success_content">감사합니다.</string>
 
     <string name="go_title">지금이 타이밍</string>
     <string name="go_subtitle">번호를 얻고 승리자가 되세요!</string>

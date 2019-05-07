@@ -32,7 +32,6 @@ class FirstRecyclerViewAdaptor : RecyclerView.Adapter<RecyclerView.ViewHolder>()
 
         view.inputEt.setText( items[position].text )
         view.titleTv.text = items[position].title
-
     }
 
 
