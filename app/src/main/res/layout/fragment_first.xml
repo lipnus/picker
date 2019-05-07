@@ -6,9 +6,9 @@
         android:layout_height="match_parent"
         tools:context=".ui.first.FirstFragment">
 
-    <ScrollView
+    <android.support.v4.widget.NestedScrollView
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" android:id="@+id/scrollview">
@@ -31,14 +31,16 @@
                     android:id="@+id/setting_title_tv" android:layout_marginTop="24dp"
                     app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginStart="24dp"/>
+
             <android.support.v7.widget.RecyclerView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/setting_title_sub_tv" android:id="@+id/first_recyclerview"/>
+                    app:layout_constraintTop_toBottomOf="@+id/setting_title_sub_tv" android:id="@+id/first_recyclerview"
+                    android:layout_marginTop="16dp"/>
 
         </android.support.constraint.ConstraintLayout>
-    </ScrollView>
+    </android.support.v4.widget.NestedScrollView>
 
 </android.support.constraint.ConstraintLayout>

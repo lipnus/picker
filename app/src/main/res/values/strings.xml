@@ -8,9 +8,9 @@
     <string name="setting_title">문장입력</string>
     <string name="setting_subtitle">입력하신 내용은 자동으로 저장됩니다 :)</string>
 
-    <string name="setting_input">입력할 때</string>
-    <string name="setting_success">받았을 때</string>
-    <string name="setting_deny">거부당했을 때</string>
+    <string name="setting_title_input">처음에 보이는 문장</string>
+    <string name="setting_title_getting">번호를 입력할 때</string>
+    <string name="setting_title_deny">거부당했을 때</string>
 
     <string name="setting_input_explain">전화번호 받을 때 표시되는 문장</string>
     <string name="setting_success_explain">번호를 치는동안 나오는 문장</string>

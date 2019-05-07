@@ -8,11 +8,12 @@
     <View
             android:background="@drawable/shadow"
             android:layout_width="0dp"
-            android:layout_height="280dp" android:id="@+id/item_view"
-            android:layout_marginTop="8dp"
+            android:layout_height="300dp" android:id="@+id/item_view"
+            android:layout_marginTop="3dp"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/item_title_tv"/>
+            app:layout_constraintTop_toBottomOf="@+id/item_title_tv" android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
     <ImageView
             android:src="@drawable/ic_left_quote2"
             android:layout_width="20dp"
@@ -38,6 +39,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/item_title_tv" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="24dp"
             app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="24dp" android:textSize="16dp"/>
 </android.support.constraint.ConstraintLayout>

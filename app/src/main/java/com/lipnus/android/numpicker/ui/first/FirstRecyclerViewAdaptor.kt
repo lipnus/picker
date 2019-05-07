@@ -10,12 +10,12 @@ import com.rengwuxian.materialedittext.MaterialEditText
 
 class FirstRecyclerViewAdaptor : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
 
-    private lateinit var items: ArrayList<FirstItem>
+    private val items = ArrayList<FirstItem>()
+
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         var view = LayoutInflater.from(parent.context).inflate(R.layout.item_first, parent, false)
-
         return CustomViewHoler(view)
     }
 
@@ -24,15 +24,14 @@ class FirstRecyclerViewAdaptor : RecyclerView.Adapter<RecyclerView.ViewHolder>()
 
         var inputEt: MaterialEditText = view.findViewById(R.id.item_input_et)
         var titleTv: TextView = view.findViewById(R.id.item_title_tv)
-
     }
 
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         var view = holder as CustomViewHoler
 
-        view.inputEt.setText( items[position].title )
-        view.titleTv.text = items[position].text
+        view.inputEt.setText( items[position].text )
+        view.titleTv.text = items[position].title
 
     }
 

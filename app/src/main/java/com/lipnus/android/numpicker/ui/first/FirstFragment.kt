@@ -56,12 +56,10 @@ class FirstFragment : BaseFragment() {
         var view: View = inflater.inflate(R.layout.fragment_first, container, false)
         recyclerView = view.findViewById(R.id.first_recyclerview)
 
+
         val message = arguments?.getString(EXTRA_MESSAGE)
+
         initRecyclerView()
-
-
-
-
 
 //        textView.text = message
 
@@ -78,13 +76,13 @@ class FirstFragment : BaseFragment() {
             layoutManager = LinearLayoutManager(context)
         }
 
-        recyclerViewAdaptor.addItem(FirstItem("title1", "text1"))
-        recyclerViewAdaptor.addItem(FirstItem("title2", "text2"))
-        recyclerViewAdaptor.addItem(FirstItem("title3", "text3"))
-        recyclerViewAdaptor.notifyDataSetChanged()
 
-
-
+        recyclerViewAdaptor.run{
+            addItem(FirstItem(getText(R.string.setting_title_input).toString(), "첫번째"))
+            addItem(FirstItem(getText(R.string.setting_title_getting).toString(), "두번째"))
+            addItem(FirstItem(getText(R.string.setting_title_deny).toString(), "세번째"))
+            recyclerViewAdaptor.notifyDataSetChanged()
+        }
 
     }
 
